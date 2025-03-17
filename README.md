@@ -1,0 +1,1 @@
+# Pastinica_Beatrice_ActivitateCTS2025.
