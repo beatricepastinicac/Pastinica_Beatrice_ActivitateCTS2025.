@@ -1,0 +1,23 @@
+7p. În cadrul aplicației de gestiune a unui magazin de pantofi, se dorește implementarea unui modul
+de creare ---BUILDER
+ personalizată de pantofi unicat. Clienții au posibilitatea de a-și parametriza pantofii în
+funcție de propriile sale nevoi și dorințe. Fiecare cerere din partea clienților pentru o nouă
+pereche de pantofi trebuie să conțină obligatoriu tipul pantofului (balerini, tenisi, ghete, stiletto),
+numărul pantofului, dimensiunea tocului și tipul de material de bază. Suplimentar, clientul își
+poate parametriza cererea prin alegerea unui set de materiale secundare care se pot atașa pe
+pantof, precum și o listă de mesaje text care să fie printate pe încălțăminte. Magazinul nu permite
+ca cererile odată lansate să poată fi modificabile în timp întrucât cererea este lansată direct spre
+producție.
+Restricții de implementare:
+• Număr pantof este o valoare întreagă între 35 și 45;
+• Dimensiune toc este o valoare întreagă între 0.5 și 12.5;
+• Există restricții între numărul de materiale suplimentare care se pot folosi în funcție de tipul
+pantofului (se adaugă o restricție la alegere);
+• Dimensiunea listei formată din mesajele text printate pe pantof precum și dimensiunea
+fiecărui text din listă depinde de numărul pantofului (toate lungimile șirurilor însumate în lista
+de mesaje trebuie să fie mai mică ca numărul pantofului);
+• orice restricție de implementare aruncă o expecție custom cu mesajul aferent situației
+respective.
+3p. Să se testeze soluția prin lansarea unui număr de cel putin 5 cereri de pantofi dintre care cel puțin
+una nu convine restricțiilor enunțate, una are o listă de materiale suplimentare și una are o listă
+de mesaje text printabile pe pantof.

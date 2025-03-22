@@ -1,20 +1,20 @@
+import enums.ETipMaterial;
+import enums.ETipPantof;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        PantofBuilder pantofBuilder = new PantofBuilder(ETipPantof.GHETE, 38, 11.25f, ETipMaterial.PIELE_ECOLOGICA);
+        Pantof pantof = pantofBuilder.build();
 
-        SalaConferinta sala = new SalaConferinta();
-        sala.setDotariSuplimentare(DotariSuplimentare.priza);
-        sala.setDotariSuplimentare(DotariSuplimentare.sistem_audio);
-        sala.setDotariSuplimentare(DotariSuplimentare.proiector);
-        sala.setDotariSuplimentare(DotariSuplimentare.internet_rapid);
+      PantofBuilder pantofBuilder1 = new PantofBuilder(ETipPantof.GHETE, 38, 10.25f, ETipMaterial.PIELE_INTOARSA);
+//        Pantof pantof1 = pantofBuilder1.setMaterialSuplimentar(ETipMaterial.PANZA).setMesajTextSuplimentar("Cu floricele").build();
 
-        sala.setNume("conf1");
+        PantofBuilder pantofBuilder2 = new PantofBuilder(ETipPantof.STILETTO, 38, 11.25f, ETipMaterial.PIELE_ECOLOGICA);
+        Pantof pantof2 = pantofBuilder1.setMaterialSuplimentar(ETipMaterial.PIELE_NATURALA).setMesajTextSuplimentar("bijuterii").build();
 
-        sala.setCapacitateMax(60);
-        sala.setCapacitateMax(800);
+        System.out.println(pantof);
+       // System.out.println(pantof1);
+        System.out.println(pantof2);
 
-        System.out.println(sala.toString());
-
-        SalaConferinta sala2 =new SalaConferintaBuilder().setNume("conf2").setCapacitateMax(100).setDotariSuplimentare(DotariSuplimentare.internet_rapid).build();
-        System.out.println(sala2.toString());
     }
 }
