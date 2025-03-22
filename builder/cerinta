@@ -1,0 +1,14 @@
+2. Configurarea unui cont premium în cadrul unei platforme de e-learning
+Scenariu:
+Un site de e-learning oferă utilizatorilor posibilitatea de a-și configura un cont premium personalizat, unde pot selecta beneficii extra (mentorat 1:1, acces offline, testare certificată).
+📌 Reguli:
+
+Toate conturile trebuie să aibă un tip de abonament (Standard, Pro, Expert) și o durată de valabilitate.
+
+Dacă nu se selectează beneficii extra, contul va avea doar acces standard.
+
+Dacă utilizatorul selectează mentorat 1:1, trebuie să aibă și minimum 3 luni de abonament Pro sau Expert.
+
+Dacă utilizatorul alege testare certificată, trebuie să plătească minim 30% din abonament în avans.
+
+Orice restricție nerespectată trebuie să arunce o excepție custom.
