@@ -1,0 +1,7 @@
+pentru a stabili un tipar pe care sa l folosim fara sa stim exact ce cream
+ex> clasa vehicul, care nu poate fi initializata de fiecare data, ne dorim sa facem un obiect
+masina sau autobuz?
+ajuta la clonarea obiectelor
+interfata comuna - metoda clone care creaza un nou onbiect al clasei care ajuta la copiera tuturor atributelor
+si prin care putem avea acces si la atributele private
+putem sa l folosim atunci cand codul nu depinde o clasa corecta si obiectul poate fiu creat prin copiere
