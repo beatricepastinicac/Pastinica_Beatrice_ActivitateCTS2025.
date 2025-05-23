@@ -1,19 +1,18 @@
-package subiecte.d.s4.decorator;
+package subiecte.d.s7.decorator;
 
 public class Main {
     public static void main(String[] args) {
-        IProdus pizza = new ProdusDeBaza("Pizza Margherita", 30);
-        IProdus pasta = new ProdusDeBaza("Pasta Carbonara", 28);
-        IProdus sandwich = new ProdusDeBaza("Sandwich", 15);
-        IProdus supa = new ProdusDeBaza("Supa crema de legume", 18);
+        IComanda magazin = new Magazin();
+        IComanda magazinCuPromo = new MagazinCuDiscount(magazin);
 
-        IProdus pizzaItaliana = new Italienesc(pizza);
-        IProdus pastaSpaniola = new Spaniol(pasta);
+        Client ana = new Client("Ana");
+        Client radu = new Client("Radu");
 
-        System.out.println(pizza.getDescriere() + " - " + pizza.getPret() + " RON");
-        System.out.println(pizzaItaliana.getDescriere() + " - " + pizzaItaliana.getPret() + " RON");
-        System.out.println(pastaSpaniola.getDescriere() + " - " + pastaSpaniola.getPret() + " RON");
-        System.out.println(sandwich.getDescriere() + " - " + sandwich.getPret() + " RON");
-        System.out.println(supa.getDescriere() + " - " + supa.getPret() + " RON");
+        magazinCuPromo.plaseazaComanda(ana, 100, "Bucuresti");
+        magazinCuPromo.plaseazaComanda(ana, 150, "Bucuresti");
+
+        magazinCuPromo.plaseazaComanda(radu, 200, "Cluj");
+        magazinCuPromo.plaseazaComanda(radu, 120, "Cluj");
+        magazinCuPromo.plaseazaComanda(radu, 300, "Cluj");
     }
 }

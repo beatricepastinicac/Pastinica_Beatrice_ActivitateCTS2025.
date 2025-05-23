@@ -1,24 +1,25 @@
-package subiecte.d.s5.proxy;
+package subiecte.d.s9.proxy;
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        ISpital spital = new Spital();
-        ModulAccesLimitat proxy = new ModulAccesLimitat(spital);
+        Map<String, String> credentiale = Map.of(
+                "ana@email.com", "1234",
+                "radu@email.com", "parola",
+                "maria@email.com", "mypass"
+        );
 
-        Vizitator v1 = new Vizitator("Andrei", "Ion Popescu");
-        Vizitator v2 = new Vizitator("Maria", "Ion Popescu");
-        Vizitator v3 = new Vizitator("Elena", "Ana Georgescu");
-        Vizitator v4 = new Vizitator("Radu", "Ana Georgescu");
-        Vizitator v5 = new Vizitator("Ioana", "Mihai Vasile");
+        IAutentificare auth = new AutentificareSimpla(credentiale);
+        ProxyAutentificareSecurizata proxy = new ProxyAutentificareSecurizata(auth);
 
-        proxy.permiteAcces(v1);
-        proxy.permiteAcces(v2);
-        proxy.permiteAcces(v3);
-        proxy.permiteAcces(v4);
-        proxy.permiteAcces(v5);
+        for (int i = 0; i < 6; i++) {
+            proxy.autentifica("ana@email.com", "gresit");
+        }
 
-        proxy.resetareZi();
+        proxy.autentifica("ana@email.com", "1234"); // cont blocat
 
-        proxy.permiteAcces(v2);
+        proxy.resetCont("ana@email.com");
+        proxy.autentifica("ana@email.com", "1234"); // acum reuseste
     }
 }

@@ -1,4 +1,6 @@
-package subiecte.d.s3.chainOfResponsability;
+package subiecte.d.s10.chainOfResponsability;
+
+import java.util.List;
 
 public abstract class Filtru {
     protected Filtru urmator;
@@ -7,5 +9,5 @@ public abstract class Filtru {
         this.urmator = urmator;
     }
 
-    public abstract void aplica(PaginaWeb pagina);
+    public abstract List<Produs> aplicaFiltru(List<Produs> produse);
 }

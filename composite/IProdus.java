@@ -1,6 +1,6 @@
-package subiecte.d.s4.composite;
+package subiecte.d.s7.composite;
 
 public interface IProdus {
-    String getDescriere();
-    double getPret();
+    void afiseaza(String indentare);
+    int getStoc();
 }

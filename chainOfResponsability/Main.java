@@ -1,27 +1,25 @@
-package subiecte.d.s3.chainOfResponsability;
-
-
-import java.util.ArrayList;
-import java.util.List;
+package subiecte.d.s11.chainOfResponsability;
 
 public class Main {
     public static void main(String[] args) {
-        PaginaWeb pagina1 = new PaginaWeb(new ArrayList<>(List.of(
-                new Item(Item.Tip.PARAGRAF, "Salut lume", true, true, "rosu"),
-                new Item(Item.Tip.IMAGINE, "banner.jpg", false, false, "n/a")
-        )));
+        Bancnota b50 = new Bancnota(50, 4);
+        Bancnota b20 = new Bancnota(20, 5);
+        Bancnota b10 = new Bancnota(10, 10);
 
-        Filtru f1 = new FiltruImagine();
-        Filtru f2 = new FiltruParagraf();
-        f1.setUrmator(f2);
+        HandlerBancnote h50 = new HandlerBancnota50(b50);
+        HandlerBancnote h20 = new HandlerBancnota20(b20);
+        HandlerBancnote h10 = new HandlerBancnota10(b10);
 
-        System.out.println("Pagina inainte:");
-        pagina1.afiseaza();
+        h50.setUrmator(h20);
+        h20.setUrmator(h10);
 
-        f1.aplica(pagina1);
+        Bancomat bancomat = new Bancomat();
+        bancomat.seteazaLant(h50);
 
-        System.out.println("Pagina dupa filtrare:");
-        pagina1.afiseaza();
+        System.out.println("Retragere 130 RON:");
+        bancomat.retrage(130);
 
+        System.out.println("\nRetragere 125 RON (nu poate fi compusa):");
+        bancomat.retrage(125);
     }
 }
