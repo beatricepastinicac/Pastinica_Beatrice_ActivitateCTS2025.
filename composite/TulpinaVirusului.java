@@ -1,4 +1,4 @@
-package s1.composite;
+package subiecte.d.s1.composite;
 
 public class TulpinaVirusului implements Virus {
     private String denumire;

@@ -1,8 +1,8 @@
-package s1.proxy;
+package subiecte.d.s5.proxy;
 
 public class Spital implements ISpital {
-    @Override
-    public void permiteAcces(Vizitator vizitator){
-        System.out.println("Vizitatorul: "+vizitator.getNume()+" a fost primit ]n salon.");
+    public void permiteAcces(Vizitator vizitator) {
+        System.out.println("Acces permis pentru " + vizitator.getNume() +
+                " la pacientul " + vizitator.getPacientVizitat());
     }
 }

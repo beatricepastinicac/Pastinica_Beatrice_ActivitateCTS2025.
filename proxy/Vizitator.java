@@ -1,29 +1,19 @@
-package s1.proxy;
+package subiecte.d.s5.proxy;
 
 public class Vizitator {
     private String nume;
-    private boolean areScrisoare;
-    private boolean esteEchipat;
+    private String pacientVizitat;
 
-    public Vizitator(String nume, boolean areScrisoare){
-        this.nume=nume;
-        this.areScrisoare=areScrisoare;
-        this.esteEchipat=false;
+    public Vizitator(String nume, String pacientVizitat) {
+        this.nume = nume;
+        this.pacientVizitat = pacientVizitat;
     }
 
-    public String getNume(){
+    public String getNume() {
         return nume;
     }
 
-    public boolean areScrisoare(){
-        return areScrisoare;
-    }
-
-    public boolean EsteEchipat(){
-        return esteEchipat;
-    }
-
-    public void setEchipat(boolean esteEchipat){
-        this.esteEchipat=esteEchipat;
+    public String getPacientVizitat() {
+        return pacientVizitat;
     }
 }

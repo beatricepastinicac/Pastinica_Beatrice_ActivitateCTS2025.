@@ -1,4 +1,4 @@
-package s1.composite;
+package subiecte.d.s1.composite;
 
 public interface Virus {
     void adauga(Virus v);

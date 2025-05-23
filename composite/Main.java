@@ -1,33 +1,27 @@
-package s1.composite;
+package subiecte.d.s4.composite;
 
 public class Main {
     public static void main(String[] args) {
+        ProdusIndividual cafea = new ProdusIndividual("Cafea", 8);
+        ProdusIndividual omleta = new ProdusIndividual("Omleta", 14);
+        ProdusIndividual ciorba = new ProdusIndividual("Ciorba de vacuta", 20);
+        ProdusIndividual friptura = new ProdusIndividual("Friptura de pui", 30);
+        ProdusIndividual salata = new ProdusIndividual("Salata fresh", 15);
 
-        Virus europa = new Continent("Europa");
-        Virus asia = new Continent("Asia");
+        MeniuZilnic meniuPranz = new MeniuZilnic("Pranz Energizant");
+        meniuPranz.adauga(ciorba);
+        meniuPranz.adauga(friptura);
+        meniuPranz.adauga(salata);
 
-        Virus romania = new Tara("România");
-        Virus germania = new Tara("Germania");
-        Virus china = new Tara("China");
+        CategorieMeniu micDejun = new CategorieMeniu("Mic Dejun");
+        micDejun.adauga(cafea);
+        micDejun.adauga(omleta);
 
-        romania.adauga(new TulpinaVirusului("SARS-CoV-2", 20000, "Mare"));
-        romania.adauga(new TulpinaVirusului("H1N1", 5000, "Mediu"));
-        germania.adauga(new TulpinaVirusului("Norovirus", 1000, "Mică"));
+        CategorieMeniu pranz = new CategorieMeniu("Pranz");
+        pranz.adauga(meniuPranz);
+        pranz.adauga(salata);
 
-        china.adauga(new TulpinaVirusului("SARS", 15000, "Mare"));
-        china.adauga(new TulpinaVirusului("Avian Flu", 4000, "Mediu"));
-
-        europa.adauga(romania);
-        europa.adauga(germania);
-        asia.adauga(china);
-
-        europa.afiseazaStructura("");
-        asia.afiseazaStructura("");
-
-        int totalEuropa = europa.getNrCazuri();
-        int totalAsia = asia.getNrCazuri();
-        System.out.println("\nTotal cazuri Europa: " + totalEuropa);
-        System.out.println("Total cazuri Asia: " + totalAsia);
-        System.out.println("Total global: " + (totalEuropa + totalAsia));
+        micDejun.afiseaza();
+        pranz.afiseaza();
     }
 }

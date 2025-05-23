@@ -1,4 +1,4 @@
-package s1.proxy;
+package subiecte.d.s1.proxy;
 
 import java.util.ArrayList;
 import java.util.List;
